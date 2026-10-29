@@ -11,6 +11,9 @@ Exercises
 
 from turtle import *
 
+# Se llama a la bibliote turtle.
+import turtle
+
 from freegames import vector
 
 
@@ -37,8 +40,19 @@ def square(start, end):
 
 
 def circle(start, end):
-    """Draw circle from start to end."""
-    pass  # TODO
+    """Draw circle with center at star and passing through end."""
+    # Calcular el radio y la distancia entre los dos clicks.
+    radius = ((end.x - start.x) ** 2 + (end.y - start.y) ** 2) ** 0.5
+
+    # Se coloca debajo del centro para que el circulo quede centrado.
+    up()
+    goto(start.x, start.y - radius)
+    setheading(0)
+    down()
+
+    begin_fill()
+    turtle.circle(radius)
+    end_fill()
 
 
 def rectangle(start, end):
