@@ -56,12 +56,14 @@ def circle(start, end):
 
 
 def rectangle(start, end):
-    "Draw rectangle from start to end."
+    """Draw rectangle from start to end."""
+    # Se mueve el primer clic sin dibujar y empieza a rellenar
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
 
+    # Dibuja la base y la altura dos veces, girando 90 grados.
     for count in range(2):
         forward(end.x - start.x)
         left(90)
@@ -73,12 +75,12 @@ def rectangle(start, end):
 
 def triangle(start, end):
     """Draw triangle from start to end."""
-    "Draw triangle from start to end."
+    # Se mueve al primer clic sin dibujar y empieza a rellenar.
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-
+    # Traza la base, sube a la  punta en medio y regresa al inicio.
     goto(end.x, start.y)
     goto((start.x + end.x) / 2, end.y)
     goto(start.x, start.y)
